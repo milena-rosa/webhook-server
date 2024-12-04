@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webhook Requests</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-4">Webhook Requests</h1>
+      <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-1/3 pr-4">
+          <div
+            id="webhook-list"
+            hx-get="/api/requests"
+            hx-trigger="load, every 10s"
+            class="bg-white shadow-md rounded p-4"
+          ></div>
+        </div>
+        <!-- Main content -->
+        <div class="w-2/3 pl-4">
+          <div
+            id="webhook-details"
+            class="bg-white shadow-md rounded p-4 relative"
+          >
+            <p class="text-gray-500">Select a webhook to view details</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

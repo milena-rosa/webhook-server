@@ -1,0 +1,33 @@
+{
+  "name": "webhook-server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "lint": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "docker:dev": "docker compose up --build -d",
+    "docker:prod": "docker build -t webhook-server-prod -f Dockerfile.prod ."
+  },
+  "author": "Milena Boselli Rosa",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "express": "^4.21.1",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.1",
+    "prisma": "^6.0.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  }
+}
